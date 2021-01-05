@@ -38,8 +38,8 @@ class App extends React.Component {
     window.addEventListener("resize", this.handleResize);
     squares.push({
       'size': this.state.squareSize,
-      'left': Math.random() * ((this.state.windowWidth - 55) - 5) + 5,
-      'top': Math.random() * ((this.state.windowHeight - 55 ) - 5) + 5,
+      'left': Math.random() * ((this.state.windowWidth - this.state.squareSize* 3) - 5) + 5,
+      'top': Math.random() * ((this.state.windowHeight - this.state.squareSize* 3) - 5) + 5,
     });
     this.setState({squares: squares})
   }
@@ -51,8 +51,8 @@ class App extends React.Component {
     for (var j = 0; j < 4; j++)
       squares.push({
         'size': square.size/2,
-        'left': Math.random() * ((this.state.windowWidth - 55) - 5) + 5,
-        'top': Math.random() * ((this.state.windowHeight - 55 ) - 5) + 5,
+        'left': Math.random() * ((this.state.windowWidth - square.size * 3) - 5) + 5,
+        'top': Math.random() * ((this.state.windowHeight - square.size* 3) - 5) + 5,
       });
     this.setState({squares: squares})
 
@@ -61,8 +61,8 @@ class App extends React.Component {
   updatePos(){
       let squares = [...this.state.squares]
       this.state.squares.forEach(element => {
-        element.top = Math.random() * ((this.state.windowHeight - 55 ) - 5) + 5
-        element.left = Math.random() * ((this.state.windowWidth - 55) - 5) + 5
+        element.top = Math.random() * ((this.state.windowHeight - element.size* 3) - 5) + 5
+        element.left = Math.random() * ((this.state.windowWidth - element.size* 3) - 5) + 5
       });
       this.setState({squares: squares})
   }
