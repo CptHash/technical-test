@@ -21,7 +21,7 @@ class App extends React.Component {
   handleResize = (e) => {
     this.setState({ windowWidth: window.innerWidth });
     this.setState({ windowHeight: window.innerHeight });
-};
+  };
 
   onClickHandler = event => {
     if (event.detail === 2) {
@@ -29,7 +29,7 @@ class App extends React.Component {
       if (this.state.crazyMode === false)
         this.intervalID = setInterval(this.updatePos.bind(this), 2000);
     }
-}
+  }
 
   componentDidMount()
   {
@@ -81,6 +81,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header" onClick={this.onClickHandler}>
+          <p>Crazy mode: {this.state.crazyMode ? "ON" : "OFF"}</p>
           {this.state.squares.map((square, i) => {
            return ( <Square size={square.size} key={i} left={square.left} top={square.top} onClick={(e)=>{
             e.stopPropagation();
