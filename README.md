@@ -20,11 +20,11 @@ To add more fun, the user can activate and deactivate a crazy mode by double cli
 
 In the project directory, you can run:
 
-## `yarn install`
+`yarn install`
 
 Install the dependencies.
 
-### `yarn start`
+`yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
